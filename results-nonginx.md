@@ -12,7 +12,7 @@ Turn off the app and monitoring:
 ```powershell
 .\down.ps1
 ```
-Results:
+## test.ps1 output
 ```
 Started load testing at 07/02/2023 14:41:10.
 This is ApacheBench, Version 2.3 <$Revision: 1903618 $>
@@ -243,5 +243,7 @@ Finished Get by query (Elastic) at 07/02/2023 14:43:15
 Finished load testing. Start time 07/02/2023 14:41:10. End time 07/02/2023 14:43:15
 ```
 
+## Grafana system metrics
 ![Grafana during load](grafana-nonginx.png)
+## Grafana Docker metrics
 ![Grafana during load (DOCKER)](grafana-nonginx-docker.png)
