@@ -15,7 +15,7 @@ Turn off the app and monitoring:
 
 ## test.ps1 output
 ```
-Started load testing at 07/02/2023 14:28:34.
+Started load testing at 07/02/2023 17:03:45.
 This is ApacheBench, Version 2.3 <$Revision: 1903618 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
@@ -39,42 +39,44 @@ Server Hostname:        localhost
 Server Port:            5000
 
 Document Path:          /api/products
-Document Length:        114 bytes
+Document Length:        113 bytes
 
 Concurrency Level:      500
-Time taken for tests:   54.870 seconds
+Time taken for tests:   87.515 seconds
 Complete requests:      50000
-Failed requests:        24557
-   (Connect: 0, Receive: 0, Length: 24557, Exceptions: 0)
-Non-2xx responses:      21769
-Total transferred:      14007127 bytes
+Failed requests:        46408
+   (Connect: 0, Receive: 0, Length: 46408, Exceptions: 0)
+Non-2xx responses:      10631
+Total transferred:      13437721 bytes
 Total body sent:        9600000
-HTML transferred:       6632975 bytes
-Requests per second:    911.25 [#/sec] (mean)
-Time per request:       548.699 [ms] (mean)
-Time per request:       1.097 [ms] (mean, across all concurrent requests)
-Transfer rate:          249.30 [Kbytes/sec] received
-                        170.86 kb/s sent
-                        420.15 kb/s total
+HTML transferred:       6152673 bytes
+Requests per second:    571.33 [#/sec] (mean)
+Time per request:       875.153 [ms] (mean)
+Time per request:       1.750 [ms] (mean, across all concurrent requests)
+Transfer rate:          149.95 [Kbytes/sec] received
+                        107.12 kb/s sent
+                        257.07 kb/s total
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.4      0       6
-Processing:    60  539 229.7    468    2734
-Waiting:       57  536 230.3    464    2732
-Total:         61  539 229.7    468    2734
+Connect:        0    0   0.5      1      16
+Processing:   342  852 166.8    841    2534
+Waiting:      330  848 166.8    837    2533
+Total:        342  852 166.8    841    2535
+ERROR: The median and mean for the initial connection time are more than twice the standard
+       deviation apart. These results are NOT reliable.
 
 Percentage of the requests served within a certain time (ms)
-  50%    468
-  66%    565
-  75%    653
-  80%    718
-  90%    883
-  95%   1004
-  98%   1081
-  99%   1134
- 100%   2734 (longest request)
-Finished POST at 07/02/2023 14:29:29
+  50%    841
+  66%    908
+  75%    953
+  80%    982
+  90%   1061
+  95%   1129
+  98%   1229
+  99%   1351
+ 100%   2535 (longest request)
+Finished POST at 07/02/2023 17:05:12
 This is ApacheBench, Version 2.3 <$Revision: 1903618 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
@@ -98,42 +100,42 @@ Server Hostname:        localhost
 Server Port:            5000
 
 Document Path:          /api/products
-Document Length:        157 bytes
+Document Length:        86 bytes
 
 Concurrency Level:      500
-Time taken for tests:   52.896 seconds
+Time taken for tests:   92.674 seconds
 Complete requests:      50000
-Failed requests:        28234
-   (Connect: 0, Receive: 0, Length: 28234, Exceptions: 0)
-Non-2xx responses:      50000
-Total transferred:      21972054 bytes
-Total body sent:        12750000
-HTML transferred:       14117948 bytes
-Requests per second:    945.24 [#/sec] (mean)
-Time per request:       528.964 [ms] (mean)
-Time per request:       1.058 [ms] (mean, across all concurrent requests)
-Transfer rate:          405.64 [Kbytes/sec] received
-                        235.39 kb/s sent
-                        641.03 kb/s total
+Failed requests:        8780
+   (Connect: 0, Receive: 0, Length: 8780, Exceptions: 0)
+Non-2xx responses:      8780
+Total transferred:      12193620 bytes
+Total body sent:        12700000
+HTML transferred:       4923380 bytes
+Requests per second:    539.52 [#/sec] (mean)
+Time per request:       926.745 [ms] (mean)
+Time per request:       1.853 [ms] (mean, across all concurrent requests)
+Transfer rate:          128.49 [Kbytes/sec] received
+                        133.83 kb/s sent
+                        262.32 kb/s total
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.4      0       5
-Processing:    99  526 233.5    457    1766
-Waiting:       11  524 233.7    454    1765
-Total:         99  526 233.5    457    1767
+Connect:        0    0   0.5      0       9
+Processing:   140  917 242.9    868    2255
+Waiting:      130  911 242.4    862    2251
+Total:        140  918 243.0    868    2256
 
 Percentage of the requests served within a certain time (ms)
-  50%    457
-  66%    580
-  75%    682
-  80%    739
-  90%    868
-  95%    984
-  98%   1088
-  99%   1152
- 100%   1767 (longest request)
-Finished PUT at 07/02/2023 14:30:22
+  50%    868
+  66%    975
+  75%   1048
+  80%   1096
+  90%   1236
+  95%   1382
+  98%   1569
+  99%   1717
+ 100%   2256 (longest request)
+Finished PUT at 07/02/2023 17:06:45
 This is ApacheBench, Version 2.3 <$Revision: 1903618 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
@@ -157,39 +159,39 @@ Server Hostname:        localhost
 Server Port:            5000
 
 Document Path:          /api/products/1234567890
-Document Length:        157 bytes
+Document Length:        0 bytes
 
 Concurrency Level:      500
-Time taken for tests:   65.667 seconds
+Time taken for tests:   79.518 seconds
 Complete requests:      50000
-Failed requests:        28231
-   (Connect: 0, Receive: 0, Length: 28231, Exceptions: 0)
-Non-2xx responses:      21769
-Total transferred:      9690876 bytes
-HTML transferred:       3417733 bytes
-Requests per second:    761.42 [#/sec] (mean)
-Time per request:       656.668 [ms] (mean)
-Time per request:       1.313 [ms] (mean, across all concurrent requests)
-Transfer rate:          144.12 [Kbytes/sec] received
+Failed requests:        15987
+   (Connect: 0, Receive: 0, Length: 15987, Exceptions: 0)
+Non-2xx responses:      15987
+Total transferred:      8511348 bytes
+HTML transferred:       2509959 bytes
+Requests per second:    628.79 [#/sec] (mean)
+Time per request:       795.179 [ms] (mean)
+Time per request:       1.590 [ms] (mean, across all concurrent requests)
+Transfer rate:          104.53 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.3      0       6
-Processing:    94  653 233.8    579    1760
-Waiting:       12  650 234.5    577    1760
-Total:         94  654 233.8    580    1761
+Connect:        0    0   0.5      0       7
+Processing:   191  790 177.1    769    2421
+Waiting:       42  786 177.1    764    2419
+Total:        192  791 177.1    769    2422
 
 Percentage of the requests served within a certain time (ms)
-  50%    580
-  66%    717
-  75%    822
-  80%    875
-  90%    977
-  95%   1073
-  98%   1228
-  99%   1352
- 100%   1761 (longest request)
-Finished Get by ID (Mongo) at 07/02/2023 14:31:27
+  50%    769
+  66%    840
+  75%    892
+  80%    920
+  90%    995
+  95%   1093
+  98%   1269
+  99%   1393
+ 100%   2422 (longest request)
+Finished Get by ID (Mongo) at 07/02/2023 17:08:05
 This is ApacheBench, Version 2.3 <$Revision: 1903618 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
@@ -216,37 +218,37 @@ Document Path:          /api/products?query=phon
 Document Length:        157 bytes
 
 Concurrency Level:      500
-Time taken for tests:   69.561 seconds
+Time taken for tests:   83.191 seconds
 Complete requests:      50000
-Failed requests:        28232
-   (Connect: 0, Receive: 0, Length: 28232, Exceptions: 0)
-Non-2xx responses:      21768
-Total transferred:      43823160 bytes
-HTML transferred:       36449016 bytes
-Requests per second:    718.79 [#/sec] (mean)
-Time per request:       695.611 [ms] (mean)
-Time per request:       1.391 [ms] (mean, across all concurrent requests)
-Transfer rate:          615.23 [Kbytes/sec] received
+Failed requests:        34892
+   (Connect: 0, Receive: 0, Length: 34892, Exceptions: 0)
+Non-2xx responses:      15108
+Total transferred:      50481568 bytes
+HTML transferred:       43160704 bytes
+Requests per second:    601.03 [#/sec] (mean)
+Time per request:       831.907 [ms] (mean)
+Time per request:       1.664 [ms] (mean, across all concurrent requests)
+Transfer rate:          592.60 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.3      0       4
-Processing:   102  692 304.1    605    3152
-Waiting:       13  689 304.8    602    3148
-Total:        102  692 304.1    605    3152
+Connect:        0    0   0.5      0       5
+Processing:   185  826 481.0    732    5720
+Waiting:       18  822 481.0    728    5719
+Total:        186  827 481.0    733    5720
 
 Percentage of the requests served within a certain time (ms)
-  50%    605
-  66%    771
-  75%    874
-  80%    915
-  90%   1027
-  95%   1119
-  98%   1256
-  99%   2223
- 100%   3152 (longest request)
-Finished Get by query (Elastic) at 07/02/2023 14:32:37
-Finished load testing. Start time 07/02/2023 14:28:34. End time 07/02/2023 14:32:37
+  50%    733
+  66%    796
+  75%    884
+  80%    949
+  90%   1046
+  95%   1121
+  98%   1241
+  99%   4999
+ 100%   5720 (longest request)
+Finished Get by query (Elastic) at 07/02/2023 17:09:28
+Finished load testing. Start time 07/02/2023 17:03:45. End time 07/02/2023 17:09:28
 ```
 
 ## Grafana system metrics

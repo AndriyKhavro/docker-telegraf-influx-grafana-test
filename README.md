@@ -16,7 +16,6 @@ Turn off the app and monitoring:
 ![Grafana during load](screenshots/grafana-nginx.png)
 ## Grafana Docker metrics
 ![Grafana during load (DOCKER)](screenshots/grafana-nginx-docker.png)
-
 [Results with nginx](results-nginx.md)
 
 [Results without nginx](results-nonginx.md)
