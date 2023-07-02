@@ -1,0 +1,1 @@
+docker compose -f docker-compose.monitoring.yml -f docker-compose.app.yml down
