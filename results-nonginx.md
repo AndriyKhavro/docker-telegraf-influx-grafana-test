@@ -244,6 +244,6 @@ Finished load testing. Start time 07/02/2023 14:41:10. End time 07/02/2023 14:43
 ```
 
 ## Grafana system metrics
-![Grafana during load](grafana-nonginx.png)
+![Grafana during load](screenshots/grafana-nonginx.png)
 ## Grafana Docker metrics
-![Grafana during load (DOCKER)](grafana-nonginx-docker.png)
+![Grafana during load (DOCKER)](screenshots/grafana-nonginx-docker.png)

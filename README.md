@@ -13,9 +13,9 @@ Turn off the app and monitoring:
 .\down.ps1
 ```
 ## Grafana system metrics
-![Grafana during load](grafana-nginx.png)
+![Grafana during load](screenshots/grafana-nginx.png)
 ## Grafana Docker metrics
-![Grafana during load (DOCKER)](grafana-nginx-docker.png)
+![Grafana during load (DOCKER)](screenshots/grafana-nginx-docker.png)
 
 [Results with nginx](results-nginx.md)
 
