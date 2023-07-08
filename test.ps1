@@ -1,25 +1,4 @@
-$concurrencyLevel = 500
-$numberOfRequests = 50000
-$port = 5000 # change to 5080 to test without nginx
+$concurrencyLevel = 50
+$network = "prjctr03"
 
-$startDate = Get-Date
-echo "Started load testing at $startDate."
-
-ab -p test-files/create-product.json -T application/json -c $concurrencyLevel -n $numberOfRequests http://localhost:$port/api/products
-$now = Get-Date
-echo "Finished POST at $now"
-
-ab -u test-files/update-product.json -T application/json -c $concurrencyLevel -n $numberOfRequests http://localhost:$port/api/products
-$now = Get-Date
-echo "Finished PUT at $now"
-
-ab -c $concurrencyLevel -n $numberOfRequests http://localhost:$port/api/products/1234567890
-$now = Get-Date
-echo "Finished Get by ID (Mongo) at $now"
-
-ab -c $concurrencyLevel -n $numberOfRequests http://localhost:$port/api/products?query=phon
-$now = Get-Date
-echo "Finished Get by query (Elastic) at $now"
-
-echo "Finished load testing. Start time $startDate. End time $now"
-
+docker run --rm --network $network -v "$(pwd)/url-list.txt:/url-list.txt" -t yokogawa/siege -b -t 60s -c $concurrencyLevel --content-type "application/json" -f url-list.txt

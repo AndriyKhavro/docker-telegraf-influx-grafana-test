@@ -1,0 +1,4 @@
+http://nginx/api/products POST {"name": "iphone", "price": 111}
+http://nginx/api/products PUT {    "id": "1234567890",    "name": "samsung phone",    "price": 110,    "created": "2023-07-02"}
+http://nginx/api/products?query=phon
+http://nginx/api/products/1234567890
