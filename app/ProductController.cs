@@ -66,11 +66,11 @@ public class ProductController : ControllerBase
         var exists = await collection.Find(p => p.Id == product.Id).AnyAsync();
         if (exists)
         {
-            await collection.InsertOneAsync(product);
+            await collection.ReplaceOneAsync(p => p.Id == product.Id, product);
         }
         else
         {
-            await collection.ReplaceOneAsync(p => p.Id == product.Id, product);
+            await collection.InsertOneAsync(product);
         }
 
         await _elasticClient.IndexDocumentAsync(product);
