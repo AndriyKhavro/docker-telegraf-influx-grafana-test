@@ -1,1 +1,1 @@
-docker compose -f docker-compose.app.yml -f docker-compose.monitoring.yml up -d --build
+docker compose up -d --build
