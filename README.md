@@ -3,9 +3,9 @@ Start the app and monitoring:
 .\up.ps1
 ```
 
-Run load testing:
+Run load testing with different concurrency levels (10, 25, 50, 100, 200, 300, 400, 500), 1 minute each:
 ```powershell
-.\test.ps1 50
+.\test.ps1
 ```
 
 Turn off the app and monitoring:
@@ -13,8 +13,9 @@ Turn off the app and monitoring:
 .\down.ps1
 ```
 
-## Grafana system metrics
-![Grafana during load](screenshots/grafana-system.png)
+## Grafana system metrics (load increasing from 50 to 500)
+![Grafana during load (LA, CPU, RAM)](screenshots/grafana-system.png)
+![Grafana during load (DISK)](screenshots/grafana-disk.png)
 
 ## Grafana Docker metrics
 ![Grafana during load (DOCKER)](screenshots/grafana-docker.png)
@@ -24,6 +25,9 @@ Turn off the app and monitoring:
 
 ## Grafana Mongo metrics
 ![Grafana during load (Mongo)](screenshots/grafana-mongo.png)
+
+## Grafana NGINX metrics
+![Grafana during load (Mongo)](screenshots/grafana-nginx.png)
 
 ## Load test results
 
@@ -160,3 +164,15 @@ Shortest transaction:           0.00
 Throughput increases with concurrency increase. Increasing concurrency beyond 100 increases response time and keeps the throughput on the same level. The system consistently maintains 100% availability despite concurrency increase.
 
 Even under the highest concurrency, idle CPU is above 20%, and used memory doesn't increase above 10.7 GB out of 15.3 total memory. 
+
+It looks like there is a limit of open connections to Mongo - it never increases above 105. `MongoDefaults.MaxConnectionPoolSize` is equal to 100 for .NET MongoClient. It seems to be the bottleneck of the system.
+
+Another bottleneck could be the number of threads in Elastic Search - it is always around 100 during the load. I tried running the same test with elastic search GET URL only and it decreased idle CPU to be between 12% to 17% and Elastic CPU usage to ~50%. There is a setting here `http://localhost:19200/_nodes/thread_pool?pretty` that limits the number of search requests to 100:
+
+```
+"search_throttled" : {
+    "type" : "fixed_auto_queue_size",
+    "size" : 1,
+    "queue_size" : 100
+}
+```
