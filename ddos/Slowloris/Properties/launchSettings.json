@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Slowloris": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
